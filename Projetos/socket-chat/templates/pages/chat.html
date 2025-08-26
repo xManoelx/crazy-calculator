@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ sala|title }} - ChatApp</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style-chat.css') }}">
+</head>
+<body>
+    <div class="header">
+        <div class="header-left">
+            <h1>ChatApp - {{ sala|title }}</h1>
+        </div>
+        <div class="nav-links">
+            <a href="/homepage?user={{ username }}">← Voltar</a>
+            <a href="/rooms">Salas</a>
+            <a href="/about">Sobre</a>
+            <a href="/logout">Sair</a>
+        </div>
+    </div>
+
+    <div class="chat-container">
+        <div class="chat-info">
+            <span>Usuário: {{ username }}</span>
+            <span>Sala: {{ sala|title }}</span>
+            <span>Online nesta sala: <span id="room-users-count">0</span></span>
+        </div>
+        
+        <div class="messages-container" id="messages">
+            <div class="welcome-message">
+                Bem-vindo ao chat {{ sala|title }}! Comece a conversar.
+            </div>
+        </div>
+        
+        <div class="message-form-container">
+            <form id="messageForm" class="message-form">
+                <input type="text" id="messageInput" class="message-input" 
+                       placeholder="Digite sua mensagem..." autocomplete="off" required>
+                <button type="submit" class="send-button">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"></script>
+    <script>
+        // Configuração para o script externo
+        window.chatConfig = {
+            username: "{{ username }}",
+            room: "{{ sala }}"
+        };
+    </script>
+    <script src="{{ url_for('static', filename='scripts/chat.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #007bff;
+    color: white;
+    padding: 1rem 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    font-size: 1.5rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1.25rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+    transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 75rem;
+    width: 95%;
+    margin: 1.25rem auto 3rem auto;
+    background: white;
+    border-radius: 0.6rem;
+    box-shadow: 0 0.125rem 0.6rem rgba(0,0,0,0.1);
+    overflow: visible;
+}
+
+.user-info {
+    background-color: #e9ecef;
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid #ddd;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.homepage-content {
+    padding: 2rem 2rem 3rem 2rem;
+    text-align: center;
+}
+
+.chats-section h2 {
+    margin-bottom: 1.5rem;
+    color: #333;
+    font-size: 1.75rem;
+}
+
+.chat-list {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 50rem;
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+}
+
+.room-users {
+    margin-bottom: 1rem;
+}
+
+.users-count {
+    color: #28a745;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* Seção de usuários online - removidos estilos desnecessários */
+
+.chat-item {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 0.6rem;
+    border-left: 0.25rem solid #007bff;
+    text-align: left;
+    transition: transform 0.2s;
+    min-height: 8rem;
+}
+
+.chat-item:hover {
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.25rem 1rem rgba(0,0,0,0.1);
+}
+
+.chat-item h3 {
+    color: #007bff;
+    margin-bottom: 0.75rem;
+    font-size: 1.5rem;
+}
+
+.chat-item p {
+    color: #666;
+    margin-bottom: 1.25rem;
+    line-height: 1.4;
+    font-size: 1rem;
+}
+
+.join-chat-btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 0.3rem;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+}
+
+.join-chat-btn:hover {
+    background-color: #0056b3;
+}
